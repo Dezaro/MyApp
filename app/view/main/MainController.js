@@ -16,9 +16,16 @@ Ext.define('MyApp.view.main.MainController', {
   onClickButton: function() {
     Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
   },
-  onConfirm: function(choice) {
-    if(choice === 'yes') {
-      //
+//  onClickButton: function () {
+//    localStorage.removeItem('loggedIn');
+//    this.getView().destroy();
+//    Ext.widget('login');
+//  },
+  onConfirm: function (choice) {
+    if (choice === 'yes') {
+    localStorage.removeItem('loggedIn');
+    this.getView().destroy();
+    Ext.widget('login');
     }
   }
 });

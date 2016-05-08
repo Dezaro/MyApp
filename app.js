@@ -3,16 +3,18 @@
  * needed for your application, but these edits will have to be merged by
  * Sencha Cmd when upgrading.
  */
-Ext.application({
-    name: 'MyApp',
+//Ext.application({
+//    name: 'MyApp',
+//
+//    extend: 'MyApp.Application',
+//    
+//    autoCreateViewport: 'MyApp.view.main.Main'
+//	
+//    //-------------------------------------------------------------------------
+//    // Most customizations should be made to MyApp.Application. If you need to
+//    // customize this file, doing so below this section reduces the likelihood
+//    // of merge conflicts when upgrading to new versions of Sencha Cmd.
+//    //-------------------------------------------------------------------------
+//});
 
-    extend: 'MyApp.Application',
-    
-    autoCreateViewport: 'MyApp.view.main.Main'
-	
-    //-------------------------------------------------------------------------
-    // Most customizations should be made to MyApp.Application. If you need to
-    // customize this file, doing so below this section reduces the likelihood
-    // of merge conflicts when upgrading to new versions of Sencha Cmd.
-    //-------------------------------------------------------------------------
-});
+Ext.application('MyApp.Application');

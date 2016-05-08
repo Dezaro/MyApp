@@ -12,7 +12,14 @@ Ext.define('MyApp.Application', {
     // TODO: add global / shared stores here
     'TreeItems'
   ],
-  launch: function() {
+  views: [
+    'MyApp.view.login.Login',
+    'MyApp.view.main.Main'
+  ],
+  launch: function () {
     // TODO - Launch the application
+    var loggedIn;
+    loggedIn = localStorage.getItem('loggedIn');
+    Ext.widget(loggedIn ? 'app-main' : 'login');
   }
 });
