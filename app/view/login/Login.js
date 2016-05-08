@@ -48,7 +48,8 @@ Ext.define("MyApp.view.login.Login", {
   alias: 'widget.login',
   xtype: 'login',
   requires: [
-    'MyApp.view.login.LoginController'
+    'MyApp.view.login.LoginController',
+    'MyApp.view.login.LoginModel'
   ],
   controller: "login-login",
   bodyPadding: 10,
