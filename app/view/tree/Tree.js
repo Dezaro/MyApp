@@ -1,5 +1,3 @@
-/* global Ext */
-
 Ext.define('MyApp.view.tree.Tree', {
   extend: 'Ext.tree.Panel',
   xtype: 'treeList',
@@ -13,7 +11,7 @@ Ext.define('MyApp.view.tree.Tree', {
   width: 250,
   title: 'Files',
   useArrows: true,
-  store: 'TreeItems', 
+  store: 'TreeItems',
   srets: '',
   rootVisible: false,
   displayField: 'name'

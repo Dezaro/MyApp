@@ -1,4 +1,3 @@
-
 Ext.define("MyApp.view.iframe.Iframe", {
   extend: 'Ext.container.Container',
   id: '',
@@ -14,11 +13,11 @@ Ext.define("MyApp.view.iframe.Iframe", {
   style: 'height: 100%;',
   layout: 'fit',
   loadingText: 'Loading ...',
-  initComponent: function () {
+  initComponent: function() {
     this.updateHTML();
     this.callParent(arguments);
   },
-  updateHTML: function () {
+  updateHTML: function() {
     this.html = '<iframe id="iframe-' + this.id + '"' +
             'style="overflow:auto; width: 100%; height: 100%;  border: none;"' +
             ' frameborder="0" ' +
@@ -34,13 +33,13 @@ Ext.define("MyApp.view.iframe.Iframe", {
 //                allowtransparency="true">\n\
 //                </iframe>';
   },
-  reload: function () {
+  reload: function() {
     this.setSrc(this.src);
   },
-  reset: function () {
+  reset: function() {
     var iframe = this.getDOM();
     var iframeParent = iframe.parentNode;
-    if (iframe && iframeParent) {
+    if(iframe && iframeParent) {
       iframe.src = 'about:blank';
       iframe.parentNode.removeChild(iframe);
     }
@@ -54,28 +53,28 @@ Ext.define("MyApp.view.iframe.Iframe", {
     iframe.style.height = '100%';
     iframeParent.appendChild(iframe);
   },
-  setSrc: function (src, loadingText) {
+  setSrc: function(src, loadingText) {
     this.src = src;
     var iframe = this.getDOM();
-    if (iframe) {
+    if(iframe) {
       iframe.src = src;
     }
   },
-  getSrc: function () {
+  getSrc: function() {
     return this.src;
   },
-  getDOM: function () {
+  getDOM: function() {
     return document.getElementById('iframe-' + this.id);
   },
-  getDocument: function () {
+  getDocument: function() {
     var iframe = this.getDOM();
     iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
     return iframe.document;
   },
   // destroy manually
-  destroy: function () {
+  destroy: function() {
     var iframe = this.getDOM();
-    if (iframe && iframe.parentNode) {
+    if(iframe && iframe.parentNode) {
       iframe.src = 'about:blank';
       iframe.parentNode.removeChild(iframe);
     }
@@ -83,14 +82,14 @@ Ext.define("MyApp.view.iframe.Iframe", {
   },
   //call this to manually change content.
   //don't call until component is rendered!!!
-  update: function (content) {
+  update: function(content) {
     this.setSrc('about:blank');
     try {
       var doc = this.getDocument();
       doc.open();
       doc.write(content);
       doc.close();
-    } catch (err) {
+    } catch(err) {
       // reset if any permission issues
       this.reset();
       var doc = this.getDocument();

@@ -1,5 +1,3 @@
-/* global Ext */
-
 /**
  * The main application class. An instance of this class is created by app.js when it calls
  * Ext.application(). This is the ideal place to handle application launch and initialization
@@ -17,7 +15,7 @@ Ext.define('MyApp.Application', {
     'MyApp.view.login.Login',
     'MyApp.view.main.Main'
   ],
-  launch: function () {
+  launch: function() {
     // TODO - Launch the application
     var loggedIn;
     loggedIn = localStorage.getItem('loggedIn');

@@ -1,5 +1,3 @@
-/* global Ext */
-
 /**
  * This class is the main view for the application. It is specified in app.js as the
  * "autoCreateViewport" property. That setting automatically applies the "viewport"
@@ -21,11 +19,11 @@ Ext.define('MyApp.view.main.MainController', {
 //    this.getView().destroy();
 //    Ext.widget('login');
 //  },
-  onConfirm: function (choice) {
-    if (choice === 'yes') {
-    localStorage.removeItem('loggedIn');
-    this.getView().destroy();
-    Ext.widget('login');
+  onConfirm: function(choice) {
+    if(choice === 'yes') {
+      localStorage.removeItem('loggedIn');
+      this.getView().destroy();
+      Ext.widget('login');
     }
   }
 });

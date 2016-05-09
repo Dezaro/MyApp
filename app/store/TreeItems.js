@@ -1,5 +1,3 @@
-/* global Ext */
-
 Ext.define("MyApp.store.TreeItems", {
   extend: "Ext.data.TreeStore",
   model: "MyApp.view.tree.TreeModel",

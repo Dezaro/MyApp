@@ -1,7 +1,7 @@
 Ext.define('MyApp.view.login.LoginController', {
   extend: 'Ext.app.ViewController',
   alias: 'controller.login-login',
-  onLoginClick: function () {
+  onLoginClick: function() {
     Ext.Ajax.request({
       url: 'data/login.php',
       method: 'POST',
@@ -14,12 +14,12 @@ Ext.define('MyApp.view.login.LoginController', {
       failure: this.onLoginFailure
     });
   },
-  onLoginFailure: function (err) {
+  onLoginFailure: function(err) {
     Ext.MessageBox.alert('Error occured during Login', 'Please try again!');
   },
-  onLoginSuccess: function (response, opts) {
+  onLoginSuccess: function(response, opts) {
     response = Ext.decode(response.responseText);
-    if (response.success) {
+    if(response.success) {
       localStorage.setItem('loggedIn', true);
       this.getView().destroy();
       Ext.widget('app-main');
