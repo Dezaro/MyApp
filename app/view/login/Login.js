@@ -2,9 +2,13 @@ var userName = {
   xtype: 'textfield',
   id: 'uNameLog',
   name: 'username',
-  labelWidth: 55,
-  fieldLabel: 'Username',
-  allowBlank: true
+  labelWidth: 70,
+  fieldLabel: 'Потребител:',
+  allowBlank: true,
+  style: 'text-align: right',
+  listeners: {
+    specialkey: 'changeFocus'
+  }
 };
 
 var password = {
@@ -12,13 +16,18 @@ var password = {
   id: 'passLog',
   name: 'password',
   inputType: 'password',
-  labelWidth: 55,
-  fieldLabel: 'Password',
-  allowBlank: true
+  labelWidth: 70,
+  fieldLabel: 'Парола:',
+  allowBlank: true,
+  style: 'text-align: right',
+  listeners: {
+    specialkey: 'onEnter'
+  }
 };
 
 var btnLogin = {
-  text: 'Login',
+  id: 'btnLogin',
+  text: '<b>Вход</b>',
   formBind: true,
   listeners: {
     click: 'onLoginClick'
@@ -26,6 +35,7 @@ var btnLogin = {
 };
 
 var loginForm = {
+  id: 'formID',
   xtype: 'form',
   border: false,
   bodyStyle: 'background:none; ',
@@ -53,8 +63,9 @@ Ext.define("MyApp.view.login.Login", {
   ],
   controller: "login-login",
   bodyPadding: 10,
-  title: 'Login Window',
+  title: '<div class="container"><div class="left-el"><img style="width: 18px; height: 15px;" src="resources/img/icon/login2.png"></div><div class="left-el">  Вход в системата</div></div>',
   closable: false,
+  enableKeyEvents: true,
   autoShow: true,
   layout: {
     type: 'vbox',

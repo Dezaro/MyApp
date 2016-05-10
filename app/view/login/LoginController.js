@@ -24,7 +24,17 @@ Ext.define('MyApp.view.login.LoginController', {
       this.getView().destroy();
       Ext.widget('app-main');
     } else {
-      Ext.MessageBox.alert('Login failed', response.message);
+      Ext.MessageBox.alert('Грешка', 'Невалидно потребителско име или парола!');
+    }
+  },
+  onEnter: function(f, e) {
+    if(e.getKey() === e.ENTER) {
+      Ext.getCmp('btnLogin').fireEvent('click');
+    }
+  },
+  changeFocus: function(f, e) {
+    if(e.getKey() === e.ENTER) {
+      Ext.getCmp('passLog').focus(true, 100);
     }
   }
 });

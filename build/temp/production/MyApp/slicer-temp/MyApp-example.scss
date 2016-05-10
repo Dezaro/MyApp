@@ -735,6 +735,8 @@ $include-myapp-view-tree-treemodel: true;
 @import '../../../../../ext/packages/ext-theme-neutral/sass/etc/all';
 /* including package ext-theme-classic */
 @import '../../../../../ext/packages/ext-theme-classic/sass/etc/all';
+/* including package MyApp */
+@import '../../../../../sass/etc/all';
 /* including package ext-theme-classic */
 @import '../../../../../ext/packages/ext-theme-classic/sass/var/Component';
 @import '../../../../../ext/packages/ext-theme-classic/sass/var/LoadMask';

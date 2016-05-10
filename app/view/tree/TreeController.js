@@ -9,7 +9,7 @@ Ext.define('MyApp.view.tree.TreeController', {
   init: function() {
     this.control({
       'treeList': {
-        select: this.onItemSelect
+        itemclick: this.onItemSelect
       }
     });
   },
@@ -21,6 +21,7 @@ Ext.define('MyApp.view.tree.TreeController', {
       for(var i = 0; i < this.tabs.items.length; ++i) {
         if(selection.data.item_id === this.tabs.items.items[i].id) {
           this.tabs.setActiveTab(i);
+          Ext.getCmp('framePanel-' + selection.data.item_id).setSrc(selection.raw.description);
           active = true;
         }
       }
